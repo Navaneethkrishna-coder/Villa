@@ -1,0 +1,17 @@
+# Database
+*.sqlite3
+
+# ZAP reports
+villa-zap-report.html
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment files
+.env
+
+# Django generated files
+staticfiles/
