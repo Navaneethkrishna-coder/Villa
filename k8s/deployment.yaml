@@ -1,0 +1,30 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: villa-deployment
+  labels:
+    app: villa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: villa
+  template:
+    metadata:
+      labels:
+        app: villa
+    spec:
+      containers:
+        - name: villa
+          image: dockernavaneeth/villa-app:v1
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DJANGO_DEBUG
+              value: "False"
+            - name: DJANGO_ALLOWED_HOSTS
+              value: "*"
+            - name: DJANGO_SECRET_KEY
+              value: "change-this-before-deployment"
+
